@@ -11,7 +11,6 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Spacer()
             Rectangle()
                 .fill(Color.red)
                 .cornerRadius(15)
@@ -19,6 +18,7 @@ struct ContentView: View {
             Circle()
                 .fill(Color.blue)
                 .frame(width: 150, height: 150)
+            Spacer()
         }
     }
 }
