@@ -9,12 +9,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var text = ""
+    
     var body: some View {
-        Image(systemName: "star.fill")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: UIScreen.main.bounds.width * 0.5)
-            .foregroundColor(Color.yellow)
+        TextField("Placeholder", text: $text)
     }
 }
 
