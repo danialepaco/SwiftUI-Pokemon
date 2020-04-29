@@ -8,21 +8,18 @@
 
 import SwiftUI
 
-//MARK: .padding() works properly most of the time
-
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Rectangle()
-                .fill(Color.red)
-                .cornerRadius(15)
-                .frame(width: 150, height: 150)
-                .padding()
-            Spacer()
-            Circle()
-                .fill(Color.blue)
-                .frame(width: 150, height: 150)
-                .padding()
+        VStack(spacing: 10) {
+            Text("This is my 1st")
+                .bold()
+                .italic()
+                .foregroundColor(Color.gray)
+            Text("Hello World!")
+                .font(.largeTitle)
+            Text("@SwiftUI")
+                .font(.title)
+                .foregroundColor(Color.blue)
         }
     }
 }
