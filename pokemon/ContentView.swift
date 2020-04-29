@@ -11,11 +11,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            Spacer()
             Rectangle()
                 .fill(Color.red)
                 .cornerRadius(15)
                 .frame(width: 150, height: 150)
-            Spacer()
             Circle()
                 .fill(Color.blue)
                 .frame(width: 150, height: 150)
