@@ -10,15 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            Rectangle()//1st
+        VStack {
+            Rectangle()
                 .fill(Color.red)
                 .cornerRadius(15)
                 .frame(width: 150, height: 150)
-            
-            Circle()//2nd
+            Spacer()
+            Circle()
                 .fill(Color.blue)
-                .frame(width: 50, height: 50)
+                .frame(width: 150, height: 150)
         }
     }
 }
