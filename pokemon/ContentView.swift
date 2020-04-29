@@ -10,17 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(spacing: 10) {
-            Text("This is my 1st")
-                .bold()
-                .italic()
-                .foregroundColor(Color.gray)
-            Text("Hello World!")
-                .font(.largeTitle)
-            Text("@SwiftUI")
-                .font(.title)
-                .foregroundColor(Color.blue)
-        }
+        Image(systemName: "star.fill")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: UIScreen.main.bounds.width * 0.5)
+            .foregroundColor(Color.yellow)
     }
 }
 
