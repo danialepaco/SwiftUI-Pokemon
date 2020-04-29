@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+//MARK: .padding() works properly most of the time
+
 struct ContentView: View {
     var body: some View {
         VStack {
@@ -15,10 +17,12 @@ struct ContentView: View {
                 .fill(Color.red)
                 .cornerRadius(15)
                 .frame(width: 150, height: 150)
+                .padding()
+            Spacer()
             Circle()
                 .fill(Color.blue)
                 .frame(width: 150, height: 150)
-            Spacer()
+                .padding()
         }
     }
 }
