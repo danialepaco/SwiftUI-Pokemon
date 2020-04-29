@@ -10,7 +10,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        Rectangle()
+            .fill(Color.red)
+            .cornerRadius(15)
+            .frame(width: 150, height: 150)
     }
 }
 
