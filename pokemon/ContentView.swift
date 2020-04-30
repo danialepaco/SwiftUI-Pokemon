@@ -10,16 +10,15 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var text = ""
+    @State var isActive = false
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Enter")
-                .font(.headline)
-                .padding(.leading, 20)
-            TextField("Placeholder", text: $text)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding([.leading, .trailing], 20)
+        VStack {
+            Toggle("This a label", isOn: $isActive)
+                .padding()
+            Toggle("", isOn: $isActive)
+                .labelsHidden()// Best practice to hide label
+            
         }
     }
 }
