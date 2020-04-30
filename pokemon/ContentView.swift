@@ -8,17 +8,17 @@
 
 import SwiftUI
 
+//MARK: ForEach shows all the views similar to a VStack in this particular case
+
 struct ContentView: View {
     
-    @State var isActive = false
-    
+    let colors: [Color] = [.red, .green, .blue]
+
     var body: some View {
-        VStack {
-            Toggle("This a label", isOn: $isActive)
+        ForEach(colors, id: \.self) { color in
+            Text(color.description.capitalized)
                 .padding()
-            Toggle("", isOn: $isActive)
-                .labelsHidden()// Best practice to hide label
-            
+                .background(color)
         }
     }
 }
