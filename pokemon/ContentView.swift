@@ -13,7 +13,14 @@ struct ContentView: View {
     @State var text = ""
     
     var body: some View {
-        TextField("Placeholder", text: $text)
+        VStack(alignment: .leading) {
+            Text("Enter")
+                .font(.headline)
+                .padding(.leading, 20)
+            TextField("Placeholder", text: $text)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding([.leading, .trailing], 20)
+        }
     }
 }
 
