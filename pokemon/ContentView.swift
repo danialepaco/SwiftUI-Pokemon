@@ -8,17 +8,20 @@
 
 import SwiftUI
 
-//MARK: ForEach shows all the views similar to a VStack in this particular case
+//MARK: List shows all the views as cells
+//MARK: List's container always align horizontally as a HStack
 
 struct ContentView: View {
     
     let colors: [Color] = [.red, .green, .blue]
-
+    
     var body: some View {
-        ForEach(colors, id: \.self) { color in
-            Text(color.description.capitalized)
-                .padding()
-                .background(color)
+        List(colors, id: \.self) { color in
+            //Imaginary HStack {}
+                Text(color.description.capitalized)
+                    .padding()
+                    .background(color)
+            //Imaginary HStack {}
         }
     }
 }
