@@ -8,20 +8,25 @@
 
 import SwiftUI
 
-//MARK: List shows all the views as cells
-//MARK: List's container always align horizontally as a HStack
-
 struct ContentView: View {
     
-    let colors: [Color] = [.red, .green, .blue]
+    var list = PokemonList()
     
     var body: some View {
-        List(colors, id: \.self) { color in
-            //Imaginary HStack {}
-                Text(color.description.capitalized)
-                    .padding()
-                    .background(color)
-            //Imaginary HStack {}
+        List {
+            ForEach(list.pokemon, id: \.self) { poke in
+                HStack {
+                    Image(systemName: "star.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.main.bounds.width * 0.3, height: 100)
+                    Spacer()
+                    Text(poke)
+                        .lineLimit(1)
+                        .font(.headline)
+                        .padding(.trailing, 20)
+                }
+            }
         }
     }
 }
@@ -30,4 +35,8 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
+
+class PokemonList {
+    var pokemon: [String] = ["Bulbasaur","squirtle","Charmander","Pikachu"]
 }
