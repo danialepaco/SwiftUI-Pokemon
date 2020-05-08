@@ -32,7 +32,7 @@ class PokemonsViewModel : ObservableObject {
                     .map { item in
                         var pokemon = item.element
                         pokemon.image = "https://pokeres.bastionbot.org/images/pokemon/\(item.offset+1).png"
-                        return item.element
+                        return pokemon
                 }
                 
             } catch {
