@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import KingfisherSwiftUI
 
 struct ContentView: View {
 
@@ -20,7 +21,7 @@ struct ContentView: View {
         List {
             ForEach(model.pokemon, id: \.self.name) { poke in
                 HStack {
-                    Image(systemName: "star.fill")
+                    KFImage(URL(string: poke.image ?? ""))
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: UIScreen.main.bounds.width * 0.3, height: 100)

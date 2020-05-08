@@ -11,12 +11,7 @@ import Alamofire
 
 class PokemonsViewModel : ObservableObject {
 
-    var pokemon: [Pokemon] = [
-        Pokemon(name: "Bulbasaur", image: ""),
-        Pokemon(name: "Squirtle", image: ""),
-        Pokemon(name: "Charmander", image: ""),
-        Pokemon(name: "Pikachu", image: "")
-    ]
+    @Published var pokemon: [Pokemon] = []
 
     func getPokemons() {
         AF.request("https://pokeapi.co/api/v2/pokemon", method: .get).responseJSON { response in
