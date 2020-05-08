@@ -16,22 +16,32 @@ struct ContentView: View {
     init() {
         model.getPokemons()
     }
+    
+    func openDetails(with pokemon: Pokemon) -> some View {
+        return DetailsView(pokemon: pokemon)
+    }
 
     var body: some View {
-        List {
-            ForEach(model.pokemon, id: \.self.name) { poke in
-                HStack {
-                    KFImage(URL(string: poke.image ?? ""))
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.main.bounds.width * 0.3, height: 100)
-                    Spacer()
-                    Text(poke.name)
-                        .lineLimit(1)
-                        .font(.headline)
-                        .padding(.trailing, 20)
+        NavigationView {
+
+            List {
+                ForEach(model.pokemon, id: \.self.name) { poke in
+                    NavigationLink(destination: self.openDetails(with: poke)) {
+                        HStack {
+                            KFImage(URL(string: poke.image ?? ""))
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.main.bounds.width * 0.3, height: 100)
+                            Spacer()
+                            Text(poke.name)
+                                .lineLimit(1)
+                                .font(.headline)
+                                .padding(.trailing, 20)
+                        }
+                    }
                 }
             }
+
         }
     }
 }
