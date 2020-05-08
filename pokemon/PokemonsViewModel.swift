@@ -19,11 +19,37 @@ class PokemonsViewModel : ObservableObject {
     ]
 
     func getPokemons() {
+        AF.request("https://pokeapi.co/api/v2/pokemon", method: .get).responseJSON { response in
+            
+            let decoder = JSONDecoder()
+            guard let data = response.data else { return }
+            
+            do {
+                
+                let pokemonsResponse = try decoder.decode(PokemonsResponse.self, from: data)
+                self.pokemon = pokemonsResponse.results
+                    .enumerated()
+                    .map { item in
+                        var pokemon = item.element
+                        pokemon.image = "https://pokeres.bastionbot.org/images/pokemon/\(item.offset+1).png"
+                        return item.element
+                }
+                
+            } catch {
+                print(error)
+            }
+            
+        }
     }
 
 }
 
-struct Pokemon {
+struct PokemonsResponse : Decodable {
+    var count: Int
+    var results : [Pokemon]
+}
+
+struct Pokemon : Decodable {
     var name : String
-    var image : String
+    var image : String?
 }
