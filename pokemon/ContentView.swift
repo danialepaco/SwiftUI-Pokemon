@@ -9,19 +9,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    var list = PokemonList()
-    
+
+    @ObservedObject var model = PokemonsViewModel()
+
+    init() {
+        model.getPokemons()
+    }
+
     var body: some View {
         List {
-            ForEach(list.pokemon, id: \.self) { poke in
+            ForEach(model.pokemon, id: \.self.name) { poke in
                 HStack {
                     Image(systemName: "star.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: UIScreen.main.bounds.width * 0.3, height: 100)
                     Spacer()
-                    Text(poke)
+                    Text(poke.name)
                         .lineLimit(1)
                         .font(.headline)
                         .padding(.trailing, 20)
@@ -35,8 +39,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
-
-class PokemonList {
-    var pokemon: [String] = ["Bulbasaur","squirtle","Charmander","Pikachu"]
 }
