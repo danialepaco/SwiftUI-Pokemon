@@ -17,6 +17,7 @@
 		565988A024652BF300C8B8E2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5659889F24652BF300C8B8E2 /* Kingfisher */; };
 		565988A224652BF300C8B8E2 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 565988A124652BF300C8B8E2 /* KingfisherSwiftUI */; };
 		565988A9246530AB00C8B8E2 /* PokemonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565988A8246530AB00C8B8E2 /* PokemonsViewModel.swift */; };
+		565988AB24653C3200C8B8E2 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565988AA24653C3200C8B8E2 /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		24690D95245A426600848C9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24690D97245A426600848C9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		565988A8246530AB00C8B8E2 /* PokemonsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonsViewModel.swift; sourceTree = "<group>"; };
+		565988AA24653C3200C8B8E2 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				24690D89245A426100848C9F /* AppDelegate.swift */,
 				24690D8B245A426100848C9F /* SceneDelegate.swift */,
 				24690D8D245A426100848C9F /* ContentView.swift */,
+				565988AA24653C3200C8B8E2 /* DetailsView.swift */,
 				565988A8246530AB00C8B8E2 /* PokemonsViewModel.swift */,
 				24690D8F245A426600848C9F /* Assets.xcassets */,
 				24690D94245A426600848C9F /* LaunchScreen.storyboard */,
@@ -165,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24690D8A245A426100848C9F /* AppDelegate.swift in Sources */,
+				565988AB24653C3200C8B8E2 /* DetailsView.swift in Sources */,
 				24690D8C245A426100848C9F /* SceneDelegate.swift in Sources */,
 				565988A9246530AB00C8B8E2 /* PokemonsViewModel.swift in Sources */,
 				24690D8E245A426100848C9F /* ContentView.swift in Sources */,
