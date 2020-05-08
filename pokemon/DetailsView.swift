@@ -12,7 +12,7 @@ import KingfisherSwiftUI
 struct DetailsView: View {
 
     @State var isFavorite : Bool = false
-    var pokemon = Pokemon(name: "Bulbasaur", image: "https://pokeres.bastionbot.org/images/pokemon/1.png")
+    var pokemon : Pokemon
 
     var body: some View {
         VStack {
@@ -31,6 +31,6 @@ struct DetailsView: View {
 
 struct DetailsView_Preview: PreviewProvider {
     static var previews: some View {
-        DetailsView()
+        DetailsView(pokemon: Pokemon(name: "Bulbasaur", image: "https://pokeres.bastionbot.org/images/pokemon/1.png"))
     }
 }
